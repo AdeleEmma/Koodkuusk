@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: black;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: white; /* Set the container background color to white */
+            padding: 20px; /* Add padding to the container */
+            display: grid; /* Use grid for the container */
+            grid-template-columns: 1fr 1fr 1fr; /* Three equally sized columns */
+            grid-gap: 10px; /* Gap between grid items */
+        }
+
+        .grid-item {
+            background-color: #3498db;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Style odd-numbered items */
+        .grid-item:nth-child(odd) {
+            background-color: #e74c3c;
+            font-family: 'Monotype Corsiva', cursive;
+        }
+
+        /* Style even-numbered items */
+        .grid-item:nth-child(even) {
+            background-color: #3498db;
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="grid-item">Item 1</div>
+        <div class="grid-item">Item 2</div>
+        <div class="grid-item">Item 3</div>
+        <div class="grid-item">Item 4</div>
+        <div class="grid-item">Item 5</div>
+        <div class="grid-item">Item 6</div>
+    </div>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: black;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Three equally sized columns */
+            grid-gap: 10px; /* Gap between grid items */
+            background-color: white;
+            padding: 20px;
+        }
+
+        .grid-item {
+            background-color: #3498db;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Style odd-numbered items */
+        .grid-item:nth-child(odd) {
+            background-color: #e74c3c;
+            font-family: 'Monotype Corsiva', cursive;
+        }
+
+        /* Style even-numbered items */
+        .grid-item:nth-child(even) {
+            background-color: #3498db;
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="grid-item">Item 1</div>
+        <div class="grid-item">Item 2</div>
+        <div class="grid-item">Item 3</div>
+        <div class="grid-item">Item 4</div>
+        <div class="grid-item">Item 5</div>
+        <div class="grid-item">Item 6</div>
+    </div>
+</body>
+</html>
+
+
