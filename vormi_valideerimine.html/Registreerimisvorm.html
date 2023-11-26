@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Validation</title>
+  <style>
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <form id="myForm">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+    <span id="usernameError" class="error"></span><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <span id="emailError" class="error"></span><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+    <span id="passwordError" class="error"></span><br>
+
+    <label for="confirmPassword">Confirm Password:</label>
+    <input type="password" id="confirmPassword" name="confirmPassword" required>
+    <span id="confirmPasswordError" class="error"></span><br>
+
+    <input type="submit" value="Submit">
+  </form>
+
+  <script>
+    document.getElementById('myForm').addEventListener('submit', function(event) {
+      // Reset error messages
+      document.getElementById('usernameError').textContent = '';
+      document.getElementById('emailError').textContent = '';
+      document.getElementById('passwordError').textContent = '';
+      document.getElementById('confirmPasswordError').textContent = '';
+
+      // Validate username
+      const username = document.getElementById('username').value;
+      if (username.length < 5) {
+        document.getElementById('usernameError').textContent = 'Username must be at least 5 characters long.';
+        event.preventDefault();
+      }
+
+      // Validate email
+      const email = document.getElementById('email').value;
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        document.getElementById('emailError').textContent = 'Invalid email format.';
+        event.preventDefault();
+      }
+
+      // Validate password
+      const password = document.getElementById('password').value;
+      if (password.length < 8) {
+        document.getElementById('passwordError').textContent = 'Password must be at least 8 characters long.';
+        event.preventDefault();
+      }
+
+      // Validate confirm password
+      const confirmPassword = document.getElementById('confirmPassword').value;
+      if (confirmPassword !== password) {
+        document.getElementById('confirmPasswordError').textContent = 'Passwords do not match.';
+        event.preventDefault();
+      }
+    });
+  </script>
+
+</body>
+</html>
