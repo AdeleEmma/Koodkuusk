@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Validation</title>
+  <style>
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <form>
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" minlength="5" required>
+    <span class="error">Username must be at least 5 characters long.</span><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <span class="error">Invalid email format.</span><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" minlength="8" required>
+    <span class="error">Password must be at least 8 characters long.</span><br>
+
+    <input type="submit" value="Submit">
+  </form>
+
+</body>
+</html>
