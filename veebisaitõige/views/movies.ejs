@@ -9,7 +9,7 @@
 <body>
     <header>
         <div class="header-container">
-            <h1>  Movies </h1>
+            <h1>  News </h1>
             <nav>
                 <ul>
                     <li><a href="/">Avaleht</a></li>
@@ -26,8 +26,8 @@
             <% if (news) { %>
                 <% news.forEach(article => { %>
                     <div class="news-article">
-                        <h2><%= Movies %></h2>
-                        <p><%= Home to some of the world’s most beloved franchises including Shrek, Madagascar, Kung Fu Panda, Trolls, The Boss Baby, The Croods and How to Train Your Dragon, DreamWorks Animation creates award-winning films for a global audience. Dedicated to helping families dream and laugh together, DreamWorks’ incredible cast of artists, storytellers, engineers and innovators have created 36 breathtaking animated feature films in the last 25 years, generating more than $15 billion at the global box office. Built on the history of brand and legacy, DWA pursues the future of storytelling in all platforms by crafting cutting-edge technology and immersion in fantastical worlds. %></p>
+                        <h2><%= article.title %></h2>
+                        <p><%= article.description %></p>
                         <a href="<%= article.link %>" target="_blank">Read more</a>
                     </div>
                 <% }) %>
