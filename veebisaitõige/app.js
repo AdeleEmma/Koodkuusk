@@ -141,22 +141,22 @@ app.get('/about', isAuthenticated, (req, res) => {
     res.render('about', { user: req.session.user });
 });
 
-app.get('/estonian-news', async (req, res) => {
+app.get('/movies', async (req, res) => {
     try {
-        const response = await axios.get('https://newsdata.io/api/1/news', {
+        const response = await axios.get('https://www.independent.co.uk/topic/dreamworks', {
             params: {
                 apiKey: 'pub_35929521c893c2142fb05e48c1b6d20178f75',
                 country: 'ee', 
-                language: 'et'
+                language: 'en'
             }
         });
 
         const news = response.data.results;
 
-        res.render('estonian-news', { user: req.session.user, news: news });
+        res.render('dreamworks', { user: req.session.user, news: news });
     } catch (error) {
-        console.error('Error fetching Estonian news:', error);
-        res.status(500).send('Error fetching news');
+        console.error('Error in Dreamworks:', error);
+        res.status(500).send('Error in dreamworks');
     }
 });
 
